@@ -24,7 +24,21 @@ public class Enemy : MonoBehaviour
     public void DamageEnemy(int damage)
     {
         health -= damage;
+
     }
+
+    public float GetSpeed()
+    {
+        return speed;
+    }
+
+    public int GetDamage()
+    {
+        return damage;
+    }
+
+
+
 
 
 

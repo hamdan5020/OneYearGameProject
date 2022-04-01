@@ -5,9 +5,8 @@ using UnityEngine;
 public class ExplodingTracker : MonoBehaviour
 {
     
-    [SerializeField] float speed = 1;
-    [SerializeField] int damage = 10;
     Player player;
+    Enemy enemyComp;
 
     [Header("SFX")]
     [SerializeField] AudioClip explosionSFX;
@@ -19,6 +18,7 @@ public class ExplodingTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemyComp = GetComponent<Enemy>();
         player = FindObjectOfType<Player>();
     }
 
@@ -30,7 +30,7 @@ public class ExplodingTracker : MonoBehaviour
 
     private void MoveToPlayer(Player player)
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyComp.GetSpeed() * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,7 +38,7 @@ public class ExplodingTracker : MonoBehaviour
         if (collision.gameObject.GetComponent<Player>())
         {
             Explode();
-            collision.gameObject.GetComponent<Player>().DamagePlayer(damage);
+            collision.gameObject.GetComponent<Player>().DamagePlayer(enemyComp.GetDamage());
         }
     }
 

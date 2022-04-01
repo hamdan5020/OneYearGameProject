@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8769602140993366074}
   - component: {fileID: 1225020468}
   - component: {fileID: 1225020467}
+  - component: {fileID: 201561338}
   m_Layer: 8
   m_Name: Exploding Tracker
   m_TagString: Untagged
@@ -97,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0076253414, y: 0.0076253414}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -108,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 0.9597335, y: 0.9597335}
   m_EdgeRadius: 0
 --- !u!114 &1225020467
 MonoBehaviour:
@@ -122,7 +123,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98698ff81b167d843b4062f5e4f6da8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  damage: 20
   explosionSFX: {fileID: 8300000, guid: fe2f7543b419df24da434b21198ec3df, type: 3}
   volume: 0.2
+  explosionVFX: {fileID: 6750817502862443582, guid: e72f8ebcabc11bd4fbb518ba662fe192, type: 3}
+--- !u!114 &201561338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4735363720123895365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8140b88fa5997f3489deb3a6197c1d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  damage: 20
+  health: 40
+  scoreVal: 5
